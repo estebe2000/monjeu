@@ -105,7 +105,7 @@ class Jeu:
 
             else:
                 if map_choice == "story.tmx":
-                    file = './sounds/win.mp3'
+                    file = './sounds/intro.mp3'
                     pygame.mixer.music.load(file)
                     pygame.mixer.music.set_volume(0.2)
                     pygame.mixer.music.play(-1)
