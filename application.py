@@ -20,8 +20,8 @@ class Application:
         self.fr = []
         self.en = []
         self.ge = []
-        self.bye = ""
-        self.title = ""
+        self.bye = []
+        self.title = []
         # Les attributs du premier élément enfant
         print("\nTous les attributs du premier élément enfant: ")
         for a in my_root[0]:
@@ -31,12 +31,13 @@ class Application:
         for a in my_root[2]:
             self.ge.append(a.text)
         for a in my_root[3]:
-            self.bye = a.text
+            self.bye.append(a.text)
         for a in my_root[4]:
-            self.title = a.text
+            self.title.append(a.text)
+        self.traduc = [self.fr,self.en, self.ge, self.bye, self.title]
 
         self.ma_musique_de_fond('menu')
-        pygame.display.set_caption(self.title)
+        pygame.display.set_caption(self.title[0])
         self.fond = (150,) * 3
         self.W = surfaceW
         self.H = surfaceH

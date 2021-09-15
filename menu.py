@@ -29,10 +29,10 @@ class Menu:
             left=a.text
 
         items = (
-            (application.fr[0], application.jeufr),
-            (application.en[0], application.jeuen),
-            (application.ge[0], application.jeuen),
-            (application.bye, application.quitter)
+            (application.traduc[0][0], application.jeufr),
+            (application.traduc[1][0], application.jeuen),
+            (application.traduc[2][0], application.jeuen),
+            (application.traduc[3][0], application.quitter)
         )
         x = 1080/2
         y = 720/3

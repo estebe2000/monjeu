@@ -52,7 +52,7 @@
 </data>
  </layer>
  <objectgroup id="10" name="Objets">
-  <object id="3" name="player" type="start" x="90" y="65.3333">
+  <object id="3" name="story.tmx_spawn" type="start" x="90" y="65.3333">
    <point/>
   </object>
   <object id="7" type="collision" x="0.666667" y="0" width="14.6667" height="720"/>
