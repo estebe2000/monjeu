@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="128">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="129">
  <tileset firstgid="1" source="nature.tsx"/>
  <tileset firstgid="721" source="house.tsx"/>
  <layer id="1" name="sol" width="100" height="100">
@@ -638,5 +638,6 @@
   <object id="125" type="collision" x="1440" y="510" width="32" height="384"/>
   <object id="126" type="collision" x="1440" y="1182" width="32" height="416"/>
   <object id="127" x="-92" y="92" width="2"/>
+  <object id="128" name="win.tmx" type="zone_switch" x="1509.33" y="1505.33" width="46.6667" height="57.3333"/>
  </objectgroup>
 </map>

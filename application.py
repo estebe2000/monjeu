@@ -1,7 +1,11 @@
 import pygame
 from menu import Menu
 from jeu import Jeu
-from menu2 import Menu2
+from menu3 import Menu3
+import time
+import xml.etree.ElementTree as et
+
+
 
 class Application:
     """ Classe maîtresse gérant les différentes interfaces du jeu """
@@ -9,8 +13,30 @@ class Application:
     def __init__(self,surfaceW ,surfaceH):
         pygame.init()
         pygame.mixer.init()
+
+        # noms des menus et commandes associées
+        my_tree = et.parse('menu.xml')
+        my_root = my_tree.getroot()
+        self.fr = []
+        self.en = []
+        self.ge = []
+        self.bye = ""
+        self.title = ""
+        # Les attributs du premier élément enfant
+        print("\nTous les attributs du premier élément enfant: ")
+        for a in my_root[0]:
+            self.fr.append(a.text)
+        for a in my_root[1]:
+            self.en.append(a.text)
+        for a in my_root[2]:
+            self.ge.append(a.text)
+        for a in my_root[3]:
+            self.bye = a.text
+        for a in my_root[4]:
+            self.title = a.text
+
         self.ma_musique_de_fond('menu')
-        pygame.display.set_caption("Mon Super Jeux")
+        pygame.display.set_caption(self.title)
         self.fond = (150,) * 3
         self.W = surfaceW
         self.H = surfaceH
@@ -19,6 +45,8 @@ class Application:
         # Groupe de sprites utilisé pour l'affichage
         self.groupeGlobal = pygame.sprite.Group()
         self.statut = True
+        font = pygame.font.Font('./fonts/fonts.ttf', 24, bold=True)
+
 
     def _initialiser(self):
         try:
@@ -39,26 +67,32 @@ class Application:
         self.fenetre.blit(self.logo_fond, (0, 0))
         self.ecran = Menu(self, self.groupeGlobal)
 
-    def menu2(self):
-        # Affichage du menu
-        self._initialiser()
-        self.ecran = Menu2(self, self.groupeGlobal, self.W, self.H)
-        self.go = "toto"
-        print()
-
     def option(self):
         # Affichage du menu
         self._initialiser()
         self.fenetre.fill(self.fond)
         self.ecran = Jeu(self, self.groupeGlobal)
 
-    def jeu(self):
+    def jeufr(self):
         # Affichage du jeu
         self._initialiser()
         self.fenetre.fill(self.fond)
         self.ma_musique_de_fond('epic')
         self.ecran = Jeu(self, self.groupeGlobal)
 
+    def jeuen(self):
+        # Affichage du jeu
+        self._initialiser()
+        self.fenetre.fill(self.fond)
+        self.ma_musique_de_fond('epic')
+        self.ecran = Jeu(self, self.groupeGlobal)
+
+    def jeuge(self):
+        # Affichage du jeu
+        self._initialiser()
+        self.fenetre.fill(self.fond)
+        self.ma_musique_de_fond('epic')
+        self.ecran = Jeu(self, self.groupeGlobal)
 
     def quitter(self):
         self.statut = False

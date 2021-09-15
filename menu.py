@@ -1,6 +1,8 @@
 import pygame
 from menubouton import MenuBouton
-
+# from lxml import etree
+# from xml.dom import minidom
+import xml.etree.ElementTree as et
 
 class Menu:
     """ Création et gestion des boutons d'un menu """
@@ -10,13 +12,27 @@ class Menu:
             normal=(0, 200, 0),
             survol=(233, 200, 200),
         )
-        # font = pygame.font.SysFont('Helvetica', 24, bold=True)
         font = pygame.font.Font('./fonts/fonts.ttf', 24, bold=True)
         # noms des menus et commandes associées
+        my_tree = et.parse('menu.xml')
+        my_root = my_tree.getroot()
+
+        # Les attributs du premier élément enfant
+        print("\nTous les attributs du premier élément enfant: ")
+        for a in my_root[0]:
+            playfr=a.text
+        for a in my_root[1]:
+            playen=a.text
+        for a in my_root[2]:
+            playge=a.text
+        for a in my_root[3]:
+            left=a.text
+
         items = (
-            ('JOUER', application.jeu),
-            ('OPTION', application.option),
-            ('QUITTER', application.quitter)
+            (application.fr[0], application.jeufr),
+            (application.en[0], application.jeuen),
+            (application.ge[0], application.jeuen),
+            (application.bye, application.quitter)
         )
         x = 1080/2
         y = 720/3

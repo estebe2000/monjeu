@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Jeux>
+    <menu data-id="fr">
+        <nom>JOUER</nom>
+        <gagner>Gagner</gagner>
+     </menu>
+    <menu data-id="en">
+        <nom>PLAY</nom>
+        <gagner>Gagner</gagner>
+    </menu>
+    <menu data-id="ge">
+        <nom>SPIELEN</nom>
+        <gagner>Gagner</gagner>
+    </menu>
+        <menu data-id="exit">
+        <nom>EXIT</nom>
+        <gagner>Gagner</gagner>
+    </menu>
+    <menu data-id="titre">
+        <nom>Mon Super Jeux</nom>
+    </menu>
+</Jeux>

@@ -5,13 +5,13 @@ from typing import Tuple, Any
 
 global user_name
 
+
 class Menu2:
     """ Création et gestion des boutons d'un menu """
 
     def __init__(self, application, *groupes):
         self.surface = application.fenetre
         app = application
-        # myimage = pygame_menu.BaseImage(pygame_menu.baseimage.IMAGE_EXAMPLE_CARBON_FIBER)
         myimage = pygame_menu.baseimage.BaseImage(
             image_path="./images/fond.png",
             drawing_mode=pygame_menu.baseimage.IMAGE_MODE_FILL
