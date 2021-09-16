@@ -113,7 +113,7 @@ class Application:
     def ma_musique_de_fond(self, choix_musique):
         # definir la musique
         pygame.mixer.init()
-        file = './sounds/'+choix_musique+'.mp3'
+        file = './sounds/'+choix_musique+'.wav'
         pygame.mixer.music.load(file)
         pygame.mixer.music.set_volume(0.2)
         pygame.mixer.music.play(-1)  # If the loops is -1 then the music will repeat indefinitely.

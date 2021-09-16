@@ -90,14 +90,14 @@ class Jeu:
         map_data = pyscroll.data.TiledMapData(tmx_data)
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size())
         if map_choice == "lab-stb.tmx":
-            file = './sounds/lab.mp3'
+            file = './sounds/lab.wav'
             pygame.mixer.music.load(file)
             pygame.mixer.music.set_volume(0.2)
             pygame.mixer.music.play(-1)
             map_layer.zoom = 1.5
         else:
             if map_choice == "win.tmx":
-                file = './sounds/win.mp3'
+                file = './sounds/win.wav'
                 pygame.mixer.music.load(file)
                 pygame.mixer.music.set_volume(0.2)
                 pygame.mixer.music.play(-1)
@@ -105,14 +105,14 @@ class Jeu:
 
             else:
                 if map_choice == "story.tmx":
-                    file = './sounds/intro.mp3'
+                    file = './sounds/intro.wav'
                     pygame.mixer.music.load(file)
                     pygame.mixer.music.set_volume(0.2)
                     pygame.mixer.music.play(-1)
                     map_layer.zoom = 1.5
 
                 else:
-                    file = './sounds/epic.mp3'
+                    file = './sounds/epic.wav'
                     pygame.mixer.music.load(file)
                     pygame.mixer.music.set_volume(0.2)
                     pygame.mixer.music.play(-1)
