@@ -14,12 +14,14 @@ Tk().wm_withdraw() #to hide the main window
 messagebox.showinfo('Continue','Beta version')
 
 
-def message_display(text,taille):
+def message_display(text,taille,x,y):
     largeText = pygame.font.Font('./fonts/fonts.ttf', taille)
     TextSurf, TextRect = text_objects(text, largeText)
-    TextRect.center = ((1080 / 2), (720 / 2))
-    gameDisplay.blit(TextSurf, TextRect)
-
+    TextRect.center = ((x / 2), (y / 2))
+    lines = text.splitlines()
+    for i, l in enumerate(lines):
+        TextSurf, TextRect = text_objects(l, largeText)
+        gameDisplay.blit(TextSurf, (x/3,y/3+taille*i))
 
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
@@ -32,7 +34,6 @@ class Jeu:
         self._fenetre = jeu.fenetre
         jeu.fond = (0, 0, 0)
         self.screen = jeu.fenetre
-
 
         # definir touche action
         self.action = False
@@ -150,9 +151,11 @@ class Jeu:
 
         # affichage winner
         if self.map == "win.tmx":
-            message_display('WINNER',115)
+            message_display('WINNER',115,1080,720)
         if self.map == "story.tmx":
-            message_display('Histoire',30)
+            f = open('story.txt', 'r')
+            message = f.read()
+            message_display(message,30,1080,720)
         # verification des zone switch
         for sprite in self.group.sprites():
             if sprite.feet.collidelist(self.zone_switch) > -1:

@@ -1,8 +1,6 @@
 import pygame
 from menu import Menu
 from jeu import Jeu
-from menu3 import Menu3
-import time
 import xml.etree.ElementTree as et
 
 
