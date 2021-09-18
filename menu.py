@@ -17,16 +17,7 @@ class Menu:
         my_tree = et.parse('menu.xml')
         my_root = my_tree.getroot()
 
-        # Les attributs du premier élément enfant
-        print("\nTous les attributs du premier élément enfant: ")
-        for a in my_root[0]:
-            playfr=a.text
-        for a in my_root[1]:
-            playen=a.text
-        for a in my_root[2]:
-            playge=a.text
-        for a in my_root[3]:
-            left=a.text
+
 
         items = (
             (application.traduc[0][0], application.jeufr),
