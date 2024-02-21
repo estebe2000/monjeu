@@ -1,0 +1,8 @@
+# Ceci est un fichier placeholder pour config.toml 
+[theme]
+primaryColor = "#FFD700" # Jaune doré pour les éléments principaux, évoquant l'énergie et la créativité
+backgroundColor = "#00BFFF" # Bleu ciel pour le fond, apportant une sensation de fraîcheur
+secondaryBackgroundColor = "#FF69B4" # Rose vif pour les arrière-plans secondaires, ajoutant une touche ludique
+textColor = "#FFFFFF" # Blanc pour le texte, assurant une bonne lisibilité sur les arrière-plans colorés
+font = "monospace" # Une police monospace donne un aspect un peu rétro et distinctif
+
